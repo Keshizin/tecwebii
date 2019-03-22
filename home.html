@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+   <meta charset="UTF-8">
+   <title>Projeto 2 - FINAL</title>
+
+   <link rel="stylesheet" type="text/css" href="css/jogo.css">
+   <script src="js/jogo.js"></script>
+</head>
+<body>
+   <!-- HEADER -->
+   <header class="site-header">
+      <div class="container-wide">
+         <h1> Escape do Planeta 2!</h1>
+      </div>
+   </header>
+
+   <!-- CORPO PRINCIPAL -->
+   <section>
+      <header class="universe-intro universe">
+         <!-- BOX PRINCIPAL -->
+         <div class="container text-white text-center">
+            <div class="text-group universe-intro__content">
+               <!-- IMAGEM -->
+               <figure class="universe-logo-wrap in-view" data-animate-in="up">
+                  <img class="universe-logo" src="img/escapeDoPlaneta2.png">
+               </figure>
+
+               <!-- CANVAS -->
+               <div>
+                  <canvas id="canvas" class="canvas-universe" width=640px height=480px>Este navegador não suprota CANVAS!</canvas>
+               </div>
+
+            </div>
+         </div>
+   
+         <!-- BACKGROUND -->
+         <div class="stars"></div>
+         <div class="stars-lg"></div>
+
+         <!-- ANIMAÇÃO DOS COMETAS -->
+         <figure class="shooting-star" style="top: 3%; transform: rotate(107deg);">
+            <img src="img/shooting-star.svg">
+         </figure>
+
+         <figure class="shooting-star-right" style="top: 9%; transform: rotate(194deg);">
+            <img src="img/shooting-star.svg">
+         </figure>
+
+      </header>
+   </section>
+
+   <!-- FOOTER -->
+   <footer class="site-footer">
+      <div class="site-footer-legal">
+         <div class="container-wide">
+            <p>Fabio Takeshi Ishikawa - 31714625 - 02N11</p>
+         </div>
+      </div>
+   </footer>
+</body>
+</html>

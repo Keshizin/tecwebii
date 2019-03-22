@@ -1,0 +1,540 @@
+/*
+ * PROJETO 2 - FINAL!
+ *
+ * Autor: Fabio Takeshi Ishikawa
+ * TURMA: 02N11
+ * TIA:   31714625
+*/
+
+@font-face {
+   font-family:'nunito_sans';
+   src:url("../fonte/nunitosans-regular-webfont.woff2")format("woff2"),url("/fonte/nunitosans-regular-webfont.woff") format("woff");
+   font-weight:normal;
+   font-style:normal;
+}
+
+@font-face {
+   font-family:'nunito_sans';
+   src:url("../fonte/nunitosans-bold-webfont.woff2") format("woff2"),url("/fonte/nunitosans-bold-webfont.woff") format("woff");
+   font-weight:700;
+   font-style:normal;
+}
+
+@font-face {
+   font-family:'stratum';
+   src:url("../fonte/stratum1-bold-webfont.woff2") format("woff2"),url("/fonte/stratum1-bold-webfont.woff") format("woff");
+   font-weight:700;
+   font-style:normal 
+}
+
+@font-face {
+   font-family:'stratum';
+   src:url("../fonte/stratum1-regular-webfont.woff2") format("woff2"),url("/fonte/stratum1-regular-webfont.woff") format("woff");
+   font-weight:normal;
+   font-style:normal;
+}
+
+@font-face {
+   font-family:'silkscreen';
+   src:url("../fonte/silkscreen/slkscr.ttf") format("truetype");
+   font-weight:normal;
+   font-style:normal;
+}
+
+@font-face {
+   font-family:'silkscreen-light';
+   src:url("../fonte/silkscreen/slkscreb.ttf") format("truetype");
+   font-weight:normal;
+   font-style:normal;
+}
+
+/* --- ESTILO PARA OS ELEMENTOS DO HTML --- */
+
+* {
+   margin:0;
+   padding:0;
+   border:0;
+}
+
+html {
+   height:100%;
+   font-size:62.5% 
+}
+
+body {
+   color:#22292C;
+   line-height:1.66;
+   height:100%;
+   padding-top:60px;
+   font-family:"nunito_sans",serif;
+   font-size:1.8rem;
+   font-weight:normal;
+}
+
+body:before {
+   content:'';
+   width:100%;
+   background:#1A1F21;
+   height:70px;
+   position:absolute;
+   top:0;
+   left:0;
+   z-index:-1;
+}
+
+@media (max-width: 599px) {
+   body {
+      font-size:1.5rem;
+   }
+}
+
+@media (min-width: 850px) {
+   body {
+      padding-top:70px;
+   }
+}
+
+header {
+   display:block;
+}
+
+h1 {
+   display:block;
+   font-family:"stratum","Arial Narrow","Trebuchet MS",sans-serif;
+   font-weight:700;
+   letter-spacing:3px;
+   font-size:2.5rem;
+   line-height:1;
+   letter-spacing:3px;
+   margin-bottom:10px;
+}
+
+img {
+   height:auto;
+   max-width:100%;
+   display:block 
+}
+
+figure {
+   height:100%;
+   font-size:62.5% 
+}
+
+/* --- ESTILO PARA AS CLASSES HTML --- */
+
+.site-header {
+   position:fixed;
+   width:100%;
+   z-index:10;
+   top:0;
+   left:0;
+   background:#1A1F21;
+}
+
+.container-wide {
+   width:92%;
+   margin:0 auto;
+   max-width:1005px;
+   transition:max-width .4s ease-out;
+   max-width:1440px;
+}
+
+
+@media (min-width: 850px) {
+   .site-header .container-wide {
+      height:70px;
+   }
+}
+
+.container-wide h1 {
+   color:white;
+}
+
+.site-header .container-wide {
+   display:flex;
+   align-items:center;
+   justify-content:space-between;
+   height:60px;
+   position:relative;
+   transition:height .4s ease-out;
+}
+
+@media (min-width: 850px) {
+   .site-header .container-wide {
+      height:70px; 
+   }
+}
+
+/* --- CORPO PRINCIPAL ---*/
+
+.universe-intro {
+   position:relative;
+   display:flex;
+   align-items:center;
+   background:#22292C;
+   overflow:hidden;
+   z-index:2;
+   padding:60px 0 150px;
+   height:800px;
+}
+
+.universe-intro:before {
+   opacity:0.2;
+}
+
+@media (min-height: 650px) {
+   .universe-intro {
+      /*min-height:calc(100vh - 70px);*/
+      /*padding:60px 0 120px;*/
+      padding: 10px 0 120px;
+   }
+}
+
+.universe {
+   background:#22292C;
+   overflow:hidden;
+   position:relative;
+   z-index:2;
+}
+
+.universe-intro .universe-intro__content {
+   display:inline-block;
+   background:#22292C;
+   border-radius:40px;
+   position:relative;
+   z-index:1;
+}
+
+.universe-logo-wrap {
+   position:relative;
+   margin:0 auto 50px;
+}
+
+.universe-logo {
+   display:block;
+   max-width:330px;
+   width:90%;
+}
+
+.container {
+   width:92%;
+   margin:0 auto;
+   max-width:1005px;
+   transition:max-width .4s ease-out;
+   padding: 0 0 120px;
+
+}
+
+.text-white {
+   color:#fff 
+}
+
+.text-center {
+   text-align:center 
+}
+
+.text-group > *:last-child {
+   margin-bottom:0;
+}
+
+.text-group > * {
+   margin-bottom:10px;
+}
+
+.text-group .text-group__ft {
+   margin-top:20px;
+}
+
+.canvas-universe {
+   border:3px solid #FFFFFF;
+}
+
+.stars, .stars-lg {
+   position:absolute;
+   z-index:-1;
+   opacity:0.3;
+   width:2000px;
+   min-height:2000px;
+   height:100%;
+   left:calc(50% - 1000px);
+   top:0;
+   transform-origin:center;
+   background:url("../img/stars-sm.svg") center/800px auto repeat;
+   animation:1000s rotate360 infinite linear;
+}
+
+.stars-lg {
+   opacity:0.2;
+   background:url("../img/stars-lg.svg") center/1100px auto repeat;
+   animation:10s pulse infinite linear;
+}
+
+.shooting-star {
+   position:absolute;
+   left:10%;
+   top:10%;
+   transform:rotate(30deg);
+   pointer-events:none 
+}
+
+@keyframes shooting-star {
+   0% {
+      opacity:1;
+      transform:scale(0) translate3d(0, 0, 0) 
+   }
+
+   15% {
+      opacity:1 
+   }
+
+   25% {
+      opacity:0;
+      transform:scale(1) translate3d(180px, 0, 0) 
+   }
+
+   100% {
+      opacity:0;
+      transform:scale(0) translate3d(180px, 0, 0) 
+   }
+}
+
+.shooting-star-right {
+   position:absolute;
+   left:80%;
+   top:80%;
+   width:130px;
+   transform:rotate(-235deg);
+   pointer-events:none 
+}
+
+.shooting-star img {
+   opacity:0;
+   animation-delay:0;
+   animation:shooting-star 6s 3s infinite ease-out;
+   animation-delay:2.5s 
+}
+
+.shooting-star-right img {
+   opacity:0;
+   animation:shooting-star 6s 3s infinite ease-out;
+   animation-delay:2.5s 
+}
+
+/* --- FOOTER --- */
+
+.site-footer {
+   position:relative;
+   width:100%;
+   background:#22292C;
+   color:#fff;
+   overflow:hidden;
+   z-index:3;
+}
+
+.site-footer:after {
+   content:'';
+   display:block;
+   position:absolute;
+   width:90%;
+   height:90%;
+   top:5%;
+   left:5%;
+   background:url("../img/star-group-sm.svg") center/cover no-repeat;
+   z-index:-1;
+   animation:pulse 6s ease infinite;
+}
+
+.site-footer-legal {
+   background:rgba(0,0,0,0.3) 
+}
+
+.site-footer-legal .container-wide {
+   padding:30px 0;
+   text-align:center;
+}
+
+/*
+input, button, select, textarea {
+   font-family:"nunito_sans",serif;
+   font-size:1.8rem;
+   line-height:1.66;
+   font-weight:normal;
+   -webkit-font-smoothing:antialiased;
+   -moz-osx-font-smoothing:grayscale;
+   font-smoothing:antialiased;
+   color:#22292C 
+}
+
+@media (max-width: 599px) {
+   input, button, select, textarea {
+      font-size:1.5rem 
+   }
+}
+
+????
+.h2 {
+   display:block;
+   font-family:"stratum","Arial Narrow","Trebuchet MS",sans-serif;
+   font-weight:700;
+   letter-spacing:3px;
+   text-transform:uppercase;
+   font-size:2.6rem;
+   letter-spacing:2px;
+   line-height:1.333;
+   margin-bottom:5px 
+}
+
+@media (min-width: 850px) {
+   .h2 {
+      font-size:3.0rem 
+   }
+}
+
+.h2 + p {
+   margin-top:20px 
+}
+
+p {
+   display:block;
+   font-family:"nunito_sans",serif;
+   font-size:1.5rem;
+   line-height:1.43;
+}
+
+@media (max-width: 599px) {
+   p {
+      font-size:1.5rem 
+   }
+}
+
+input {
+   color:inherit;
+   text-decoration:none;
+   transition:all .4s ease-out 
+}
+
+input:hover {
+   cursor:pointer 
+}
+
+ESTILO PARA O CORPO DO HTML
+
+.text-center p,.text-center img {
+   margin-left:auto;
+   margin-right:auto 
+}
+
+.universe-logo2 {
+   display:block;
+   max-width:500px;
+   width:100% 
+}
+
+.universe-logo3 {
+   display:block;
+   max-width:95px;
+   width:100% 
+}
+
+.btn {
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   width:auto;
+   height:48px;
+   min-width:160px;
+   z-index:1;
+   padding:9px 24px;
+   font-family:"stratum","Arial Narrow","Trebuchet MS",sans-serif;
+   font-size:1.5rem;
+   font-weight:700;
+   letter-spacing:3px;
+   text-transform:uppercase;
+   color:#fff;
+   text-align:center;
+   border-radius:4px;
+   overflow:hidden;
+   background:linear-gradient(to right, #E67207 0%, #EF4E7B 50%, #A166AB 100%);
+   transform:translate3d(0, 0, 0);
+   transition:all .4s ease-out 
+   margin-right:20px;
+   margin-left:20px; 
+}
+
+.btn:before {
+   content:"";
+   width:calc(100% - 4px);
+   height:calc(100% - 4px);
+   background:#22292C;
+   position:absolute;
+   top:2px;
+   left:2px;
+   border-radius:2px;
+   z-index:-1 
+}
+
+.btn:after {
+   content:'';
+   position:absolute;
+   top:0;
+   left:0;
+   height:100%;
+   width:100%;
+   display:block;
+   transition:all .4s ease-out;
+   background:linear-gradient(to right, #E67207 0%, #EF4E7B 5%, #A166AB 50%);
+   z-index:-3;
+   opacity:0 
+}
+
+.btn1 {
+   position:relative;
+   display:inline-block;
+   vertical-align:middle;
+   width:auto;
+   height:48px;
+   min-width:80px;
+   z-index:1;
+   padding:9px 24px;
+   font-family:"stratum","Arial Narrow","Trebuchet MS",sans-serif;
+   font-size:2.0rem;
+   font-weight:700;
+   letter-spacing:3px;
+   text-transform:uppercase;
+   color:#fff;
+   text-align:center;
+   border-radius:4px;
+   overflow:hidden;
+   background:linear-gradient(to right, #32f2e2 0%, #8b31f1 100%);
+   transform:translate3d(0, 0, 0);
+   transition:all .4s ease-out 
+   margin-right:20px;
+   margin-left:20px; 
+}
+
+.btn1:before {
+   content:"";
+   width:calc(100% - 4px);
+   height:calc(100% - 4px);
+   background:#22292C;
+   position:absolute;
+   top:2px;
+   left:2px;
+   border-radius:2px;
+   z-index:-1 
+}
+
+
+.btn1:after {
+   content:'';
+   position:absolute;
+   top:0;
+   left:0;
+   height:100%;
+   width:100%;
+   display:block;
+   transition:all .4s ease-out;
+   background:linear-gradient(to right, #32f2e2 0%, #8b31f1 50%);
+   z-index:-3;
+   opacity:0 
+}
